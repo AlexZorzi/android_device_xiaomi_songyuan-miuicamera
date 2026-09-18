@@ -28,12 +28,10 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libgui_shim_miuicamera.so'),
     'system/lib64/libmicampostproc_client.so': blob_fixup()
         .remove_needed('libhidltransport.so'),
-    # The myron patches in patches-myron-reference/ do NOT apply here: songyuan's
-    # APK is a different build with a different R8 mapping. Every path they touch
-    # (smali_classes4/z7/c.smali, smali_classes4/x8/a.smali, smali_classes6/vj/e.smali,
-    # smali/vb/e.smali) is absent. Re-derive them, then restore:
-    #     'system/priv-app/MiuiCamera/MiuiCamera.apk': blob_fixup()
-    #         .apktool_patch('patches'),
+    # patches/ holds only 0001, re-derived for songyuan's R8 mapping. The rest of
+    # myron's set is still unported; see patches-myron-reference/ and the README.
+    'system/priv-app/MiuiCamera/MiuiCamera.apk': blob_fixup()
+        .apktool_patch('patches'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
