@@ -1,0 +1,20 @@
+binder_call(hal_camera_default, platform_app)
+
+get_prop(hal_camera_default, ab_update_gki_prop)
+get_prop(hal_camera_default, adaptive_haptics_prop)
+get_prop(hal_camera_default, adbd_config_prop)
+get_prop(hal_camera_default, bluetooth_a2dp_offload_prop)
+get_prop(hal_camera_default, bluetooth_audio_hal_prop)
+get_prop(hal_camera_default, aac_drc_prop)
+
+allow hal_camera_default self:process execmem;
+
+allow hal_camera_default platform_app_36:binder call;
+allow hal_camera_default vendor_sysfs_kgsl:file r_file_perms;
+allow hal_camera_default vendor_sysfs_kgsl:lnk_file r_file_perms;
+allow hal_camera_default sysfs:file r_file_perms;
+allow hal_camera_default hal_misys_vendor_exec:file entrypoint;
+allow hal_camera_default hal_misys_vendor_service:service_manager add;
+allow hal_camera_default vendor_camera_data_file:dir { create_dir_perms r_dir_perms };
+allow hal_camera_default vendor_camera_data_file:file { create_file_perms rw_file_perms };
+allow hal_camera_default appdomain_tmpfs:file rw_file_perms;
