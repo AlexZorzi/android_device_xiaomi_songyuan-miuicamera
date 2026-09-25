@@ -17,6 +17,9 @@ allow platform_app vendor_camera_data_file:dir { append map r_dir_perms write };
 allow platform_app vendor_camera_data_file:file { getattr open read };
 
 allow platform_app app_data_file:file execute;
+# Downloadable modes (panorama...) dlopen their native libs from the app's
+# data dir; the camera runs as platform_app_36 (stock grants the same).
+allow platform_app_36 app_data_file:file { getattr map execute };
 
 # Properties
 get_prop(platform_app, vendor_audio_prop)
