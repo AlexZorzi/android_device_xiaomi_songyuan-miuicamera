@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<permissions>
+    <!-- START_ACTIVITIES_FROM_BACKGROUND: the camera sends the QR result to
+         Scanner's receiver, which then opens its result activity; without it
+         background activity launch rules block that. -->
+    <privapp-permissions package="com.xiaomi.scanner">
+        <permission name="android.permission.CHANGE_CONFIGURATION" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+    </privapp-permissions>
+</permissions>
