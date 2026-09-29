@@ -4,7 +4,7 @@ product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera
 
 # Xiaomi Scanner: MIUI Camera hands decoded QR codes to it
 # (without it the camera turns "Scan QR codes" off)
-product/data-app/MiuiScanner/MiuiScanner.apk:system/priv-app/MiuiScanner/MiuiScanner.apk;PRESIGNED
+product/data-app/MiuiScanner/MiuiScanner.apk:system/priv-app/MiuiScanner/MiuiScanner.apk;PRESIGNED;SKIPAPKCHECKS
 system_ext/lib64/libcamera_algoup_jni.xiaomi.so:system/lib64/libcamera_algoup_jni.xiaomi.so
 system_ext/lib64/libcamera_mianode_jni.xiaomi.so:system/lib64/libcamera_mianode_jni.xiaomi.so
 system_ext/lib64/libmicampostproc_client.so:system/lib64/libmicampostproc_client.so
